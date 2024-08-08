@@ -16,13 +16,13 @@ if (isNaN(hours)) {
 	}
 }
 
-let secondInAMinutes = 60;
+const secondInAMinutes = 60;
 console.log(`${secondInAMinutes} second in minutes`);
 
-let minutesInAnHour = 60;
+const minutesInAnHour = 60;
 console.log(`${minutesInAnHour} minutes in hours`);
 
-let secondsInAnHour = secondInAMinutes * minutesInAnHour;
+const secondsInAnHour = secondInAMinutes * minutesInAnHour;
 console.log(`${secondsInAnHour} seconds in one hour`);
 
 let result = hours * secondsInAnHour;

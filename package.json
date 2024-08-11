@@ -1,0 +1,23 @@
+{
+  "name": "hw",
+  "version": "1.0.0",
+  "main": "src/pages/index.html",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "hello"
+  ],
+  "author": "Ruslan Voloshyn",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@eslint/js": "^9.9.0",
+    "eslint": "^9.9.0",
+    "globals": "^15.9.0",
+    "prettier": "3.3.3"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}

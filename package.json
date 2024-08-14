@@ -1,0 +1,22 @@
+{
+    "name": "js-hw",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "devDependencies": {
+        "@eslint/js": "^9.9.0",
+        "eslint": "^8.57.0",
+        "globals": "^15.9.0",
+        "prettier": "3.3.3"
+    },
+    "dependencies": {
+        "airbnb": "^0.0.2",
+        "lodash": "^4.17.21"
+    }
+}

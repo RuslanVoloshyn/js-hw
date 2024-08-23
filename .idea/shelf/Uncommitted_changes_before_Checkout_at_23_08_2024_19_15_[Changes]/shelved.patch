@@ -1,0 +1,30 @@
+Index: .gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># Default ignored files\r\n/shelf/\r\n# Editor-based HTTP Client requests\r\n/httpRequests/\r\n/node_modules\r\n.prettierignore\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.gitignore b/.gitignore
+--- a/.gitignore	(revision 50aa3b496b9355d78a23736faa616e47f9b26a5a)
++++ b/.gitignore	(date 1724433101008)
+@@ -1,6 +1,0 @@
+-# Default ignored files
+-/shelf/
+-# Editor-based HTTP Client requests
+-/httpRequests/
+-/node_modules
+-.prettierignore
+Index: style/styles.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/style/styles.css b/style/styles.css
+new file mode 100644
+--- /dev/null	(date 1724433074527)
++++ b/style/styles.css	(date 1724433074527)
+@@ -0,0 +1,3 @@
++body {
++	background: #282828;
++}

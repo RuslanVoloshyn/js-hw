@@ -1,0 +1,23 @@
+Index: js/script.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>'use strict';\r\n//Отримання та виведення даних:\r\nconst name = prompt('What is your name?');\r\nconst age = prompt('What is your age?');\r\nconst likesProgramming = confirm('Do you like programming?');\r\n//Обробка та виведення даних\r\nconsole.log(name, typeof name);\r\nconsole.log(age, typeof age);\r\nconsole.log(likesProgramming, typeof likesProgramming);\r\n\r\n//Робота з рядками\r\nconst greeting = 'Ruslan';\r\nalert(`Привіт ${greeting}`);\r\n\r\n//Перетворення типів:\r\nconst numericAge = Number(age);\r\nconst nextAge = numericAge;\r\nconsole.log(`${nextAge} + 1`);\r\n//Порівняння значень:\r\nlet isAdult = age >= 18;\r\nconsole.log(isAdult);\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/js/script.js b/js/script.js
+--- a/js/script.js	
++++ b/js/script.js	
+@@ -17,5 +17,11 @@
+ const nextAge = numericAge;
+ console.log(`${nextAge} + 1`);
+ //Порівняння значень:
+-let isAdult = age >= 18;
++let isAdult = true;
++
++if (age >= 18) {
++	isAdult = true;
++}else {
++	isAdult = false;
++}
+ console.log(isAdult);

@@ -1,5 +1,6 @@
 'use strict';
 
-for (let i = 10; i <= 20; i++) {
-    console.log(`${+i} , `);
-}
+(function () {
+    const form = document.querySelector('[data-todo-form]');
+    console.log(form);
+})();

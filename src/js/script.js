@@ -23,7 +23,7 @@ function InsertWordInto(str) {
 
 const insert = InsertWordInto('hello world');
 
-console.log(insert('Odesa')); // -> 'hello Odesa world'
-console.log(insert('Odesa')); // -> 'Odesa hello world'
-console.log(insert('Odesa')); // -> 'hello world Odesa'
-console.log(insert('Odesa')); // -> 'hello Odesa world' (повторюємо цикл)
+console.log(insert('Odesa'));
+console.log(insert('Odesa'));
+console.log(insert('Odesa'));
+console.log(insert('Odesa'));

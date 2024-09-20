@@ -1,26 +1,29 @@
 'use strict';
 
 function InsertWordInto(str) {
-    let lastIndex = 0;
     const words = str.split(' ');
+    let position = 0;
 
     return function (wordToInsert) {
-        if (lastIndex === 0) {
-            words.unshift(wordToInsert);
-        } else if (lastIndex === words.length) {
-            words.push(wordToInsert);
-        } else {
-            words.splice(lastIndex, 0, wordToInsert);
+        let result = '';
+
+        if (position === 0) {
+            result = `${words[0]} ${wordToInsert} ${words[1]}`;
+        } else if (position === 1) {
+            result = `${wordToInsert} ${words.join(' ')}`;
+        } else if (position === 2) {
+            result = `${words.join(' ')} ${wordToInsert}`;
         }
-        lastIndex++;
 
-        if (lastIndex > words.length) lastIndex = 0;
+        position = (position + 1) % 3;
 
-        return words.join(' ');
+        return result;
     };
 }
 
 const insert = InsertWordInto('hello world');
-console.log(insert('Odesa'));
-console.log(insert('Odesa'));
-console.log(insert('Odesa'));
+
+console.log(insert('Odesa')); // -> 'hello Odesa world'
+console.log(insert('Odesa')); // -> 'Odesa hello world'
+console.log(insert('Odesa')); // -> 'hello world Odesa'
+console.log(insert('Odesa')); // -> 'hello Odesa world' (повторюємо цикл)

@@ -1,6 +1,6 @@
 'use strict';
 
-function InsertWordInto(str) {
+const insertWordInto = (str) => {
     const words = str.split(' ');
     let position = 0;
 
@@ -8,7 +8,12 @@ function InsertWordInto(str) {
         let result = '';
 
         if (position === 0) {
-            result = `${words[0]} ${wordToInsert} ${words[1]}`;
+            const middleIndex = Math.floor(words.length / 2);
+            result = [
+                ...words.slice(0, middleIndex),
+                wordToInsert,
+                ...words.slice(middleIndex),
+            ].join(' ');
         } else if (position === 1) {
             result = `${wordToInsert} ${words.join(' ')}`;
         } else if (position === 2) {
@@ -19,9 +24,9 @@ function InsertWordInto(str) {
 
         return result;
     };
-}
+};
 
-const insert = InsertWordInto('hello world');
+const insert = insertWordInto('hello world this is a test');
 
 console.log(insert('Odesa'));
 console.log(insert('Odesa'));

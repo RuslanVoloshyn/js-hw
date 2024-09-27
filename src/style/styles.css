@@ -1,4 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     background-color: #282828;
     color: #f0ffffff;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+}
+
+.table__border,
+td {
+    border: 1px solid #e1e1e1;
+}
+
+.table__border td {
+    padding: 5px;
 }

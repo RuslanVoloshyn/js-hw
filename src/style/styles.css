@@ -10,14 +10,16 @@ body {
 }
 
 .container {
-    max-width: 1000px;
-    margin: 0 auto;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .wrapper {
-    display: flex;
-    justify-content: center;
-    margin-top: 150px;
+    max-width: 310px;
+    max-height: 330px;
 }
 
 .table__border,

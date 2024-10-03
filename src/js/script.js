@@ -8,9 +8,8 @@ const appendHTNLElement = (parentEl = null, elementToAppend = null) => {
     parentEl.append(elementToAppend);
 };
 
-const getRandomNumbers = () => {
-    const num = Math.floor(Math.random() * 10);
-    if (num === 0) return 1;
+const getRandomNumbers = (min, max) => {
+    const num = Math.floor(Math.random() * max) + 1;
     return num;
 };
 
@@ -22,6 +21,6 @@ const generateImages = (imagesName) => {
     return img;
 };
 
-const imagesToAppend = generateImages(getRandomNumbers());
+const imagesToAppend = generateImages(getRandomNumbers(0, 10));
 
 appendHTNLElement(document.body, imagesToAppend);

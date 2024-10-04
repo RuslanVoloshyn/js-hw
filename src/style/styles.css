@@ -3,12 +3,11 @@ body {
     color: #f0ffffff;
 }
 
-#focus {
+#focus-info {
     display: none;
     position: absolute;
-    background-color: #f0f0f0;
     border: 1px solid #ccc;
     padding: 10px;
-    top: 50px;
-    left: 20px;
+    top: 8px;
+    left: 240px;
 }

@@ -6,8 +6,6 @@ body {
 #focus-info {
     display: none;
     position: absolute;
-    border: 1px solid #ccc;
-    padding: 10px;
     top: 8px;
     left: 240px;
 }

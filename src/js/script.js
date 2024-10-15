@@ -4,7 +4,6 @@
     const form = document.querySelector('[data-todo-form]');
     const todoItemsContainer = document.querySelector('#todoItems');
 
-    // Функція для створення елементу завдання
     const createTodoItem = ({ title, description }) => {
         const wrapper = document.createElement('div');
         wrapper.className = 'col-4';
@@ -17,12 +16,10 @@
                 <button class="btn btn-sm btn-danger delete-btn">Delete</button>
             </div>`;
 
-        // Додаємо обробник для кнопки редагування
         wrapper.querySelector('.edit-btn').addEventListener('click', () => {
             editTodoItem(wrapper, title, description);
         });
 
-        // Додаємо обробник для кнопки видалення
         wrapper.querySelector('.delete-btn').addEventListener('click', () => {
             deleteTodoItem(wrapper);
         });
@@ -30,7 +27,6 @@
         return wrapper;
     };
 
-    // Функція для редагування завдання
     const editTodoItem = (wrapper, title, description) => {
         const titleInput = form.querySelector('input[name="title"]');
         const descriptionInput = form.querySelector(
@@ -40,11 +36,9 @@
         titleInput.value = title;
         descriptionInput.value = description;
 
-        // Після редагування видаляємо старе завдання
         deleteTodoItem(wrapper);
     };
 
-    // Функція для видалення завдання
     const deleteTodoItem = (wrapper) => {
         wrapper.remove();
     };

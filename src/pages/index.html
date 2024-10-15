@@ -17,50 +17,48 @@
         <link rel="stylesheet" href="./../style/styles.css" />
     </head>
     <body>
-        <h1 class="text-center mt-5 mb-5">TODO LIST</h1>
-        <div class="container">
-            <div class="row">
-                <div class="col-6">
-                    <form data-todo-form>
-                        <div class="mb-3">
-                            <label
-                                for="exampleFormControlInput1"
-                                class="form-label"
-                                >Task title</label
+        <main>
+            <h1 class="text-center mt-5 mb-5">TODO LIST</h1>
+            <div class="container">
+                <div class="row">
+                    <div class="col-4">
+                        <form data-todo-form>
+                            <div class="mb-3">
+                                <label class="form-label">Task title</label>
+                                <input
+                                    type="text"
+                                    name="title"
+                                    class="form-control"
+                                    placeholder="Title"
+                                    required
+                                />
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Task body</label>
+                                <textarea
+                                    name="description"
+                                    class="form-control"
+                                    placeholder="Task body"
+                                    cols="30"
+                                    rows="10"
+                                    required
+                                ></textarea>
+                            </div>
+                            <button
+                                type="submit"
+                                class="btn btn-primary"
+                                disabled
                             >
-                            <input
-                                type="text"
-                                name="title"
-                                class="form-control"
-                                id="exampleFormControlInput1"
-                                placeholder="Title"
-                                required
-                            />
-                        </div>
-                        <div class="mb-3">
-                            <label
-                                for="exampleFormControlTextarea1"
-                                class="form-label"
-                                >Task body</label
-                            >
-                            <textarea
-                                name="description"
-                                class="form-control"
-                                id="exampleFormControlTextarea1"
-                                cols="8"
-                                rows="8"
-                                required
-                            ></textarea>
-                        </div>
-                        <div class="mb-3">
-                            <button type="button" class="btn btn-success">
-                                Create Task
+                                Create Task!
                             </button>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
+                    <div class="col-8">
+                        <div class="row" id="todoItems"></div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </main>
 
         <script src="./../js/script.js"></script>
     </body>

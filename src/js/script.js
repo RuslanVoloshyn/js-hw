@@ -1,8 +1,10 @@
 'use strict';
+
 (function () {
     const form = document.querySelector('[data-todo-form]');
     const todoItemsContainer = document.querySelector('#todoItems');
 
+    // Функція для створення елементу завдання
     const createTodoItem = ({ title, description }) => {
         const wrapper = document.createElement('div');
         wrapper.className = 'col-4';
@@ -11,9 +13,40 @@
             <div class="taskWrapper">
                 <div class="taskHeading">${title}</div>
                 <div class="taskDescription">${description}</div>
+                <button class="btn btn-sm btn-warning edit-btn">Edit</button>
+                <button class="btn btn-sm btn-danger delete-btn">Delete</button>
             </div>`;
 
+        // Додаємо обробник для кнопки редагування
+        wrapper.querySelector('.edit-btn').addEventListener('click', () => {
+            editTodoItem(wrapper, title, description);
+        });
+
+        // Додаємо обробник для кнопки видалення
+        wrapper.querySelector('.delete-btn').addEventListener('click', () => {
+            deleteTodoItem(wrapper);
+        });
+
         return wrapper;
+    };
+
+    // Функція для редагування завдання
+    const editTodoItem = (wrapper, title, description) => {
+        const titleInput = form.querySelector('input[name="title"]');
+        const descriptionInput = form.querySelector(
+            'textarea[name="description"]'
+        );
+
+        titleInput.value = title;
+        descriptionInput.value = description;
+
+        // Після редагування видаляємо старе завдання
+        deleteTodoItem(wrapper);
+    };
+
+    // Функція для видалення завдання
+    const deleteTodoItem = (wrapper) => {
+        wrapper.remove();
     };
 
     const getFormHandlers = (form) => {
@@ -40,6 +73,7 @@
 
             const todoItemElement = createTodoItem(data);
             todoItemsContainer.prepend(todoItemElement);
+
             event.target.reset();
         };
 
@@ -47,14 +81,12 @@
             const formSubmitBtn = form.querySelector('button[type=submit]');
 
             if (target.value.trim().length) {
-                if (!fields[target.name]) fields[target.name] = true;
+                fields[target.name] = true;
             } else {
-                if (fields[target.name]) fields[target.name] = false;
+                fields[target.name] = false;
             }
 
-            isFormSubmitDisabled = !Object.values(fields).every(
-                (field) => field
-            );
+            isFormSubmitDisabled = !Object.values(fields).every(Boolean);
 
             if (!isFormSubmitDisabled) {
                 formSubmitBtn.removeAttribute('disabled');

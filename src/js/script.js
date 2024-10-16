@@ -4,7 +4,9 @@
     const form = document.querySelector('[data-todo-form]');
     const todoItemsContainer = document.querySelector('#todoItems');
 
-    const createTodoItem = ({ title, description }) => {
+    // Функція для створення елементу завдання
+    const createTodoItem = (data) => {
+        const { title, description } = data; // Витягаємо title і description з об'єкта data
         const wrapper = document.createElement('div');
         wrapper.className = 'col-4';
 
@@ -34,28 +36,31 @@
 
             const inputs = event.target.querySelectorAll('input, textarea');
 
-            const data = Array.from(inputs).reduce((acc, { name, value }) => {
+            const data = Array.from(inputs).reduce((acc, input) => {
+                const { name, value } = input;
                 acc[name] = value;
                 return acc;
             }, {});
 
-            const todoItemElement = createTodoItem(data);
+            const todoItemElement = createTodoItem(data); // Передаємо об'єкт даних
             todoItemsContainer.prepend(todoItemElement);
             event.target.reset();
+
+            // Скидаємо стани полів після сабміту
+            Object.keys(fields).forEach((key) => (fields[key] = false));
+            form.querySelector('button[type=submit]').setAttribute(
+                'disabled',
+                ''
+            );
         };
 
         const inputHandler = ({ target }) => {
             const formSubmitBtn = form.querySelector('button[type=submit]');
 
-            if (target.value.trim().length) {
-                if (!fields[target.name]) fields[target.name] = true;
-            } else {
-                if (fields[target.name]) fields[target.name] = false;
-            }
+            fields[target.name] = target.value.trim().length > 0;
 
-            isFormSubmitDisabled = !Object.values(fields).every(
-                (field) => field
-            );
+            // Перевіряємо стан кнопки
+            isFormSubmitDisabled = !Object.values(fields).every(Boolean);
 
             if (!isFormSubmitDisabled) {
                 formSubmitBtn.removeAttribute('disabled');

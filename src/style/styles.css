@@ -2,3 +2,7 @@ body {
     background-color: #282828;
     color: #f0ffffff;
 }
+
+.card-body {
+    color: black;
+}

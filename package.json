@@ -17,6 +17,7 @@
     },
     "dependencies": {
         "airbnb": "^0.0.2",
+        "bootstrap": "^5.3.3",
         "lodash": "^4.17.21"
     }
 }

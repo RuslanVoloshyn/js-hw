@@ -8,9 +8,32 @@
         />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>JS</title>
+        <link
+            rel="stylesheet"
+            href="./../../node_modules/bootstrap/dist/css/bootstrap.min.css"
+        />
         <link rel="stylesheet" href="./../style/styles.css" />
     </head>
     <body>
+        <div class="container mt-5">
+            <h1 class="text-center">Погода</h1>
+            <div class="mb-3">
+                <label for="cityInput" class="form-label"
+                    >Введіть назву міста:</label
+                >
+                <input
+                    type="text"
+                    id="cityInput"
+                    class="form-control"
+                    placeholder="Наприклад, Lviv"
+                />
+            </div>
+            <button id="getWeatherBtn" class="btn btn-primary">
+                Дізнатися погоду
+            </button>
+            <div id="weatherContainer" class="mt-5"></div>
+        </div>
+
         <script src="./../js/script.js"></script>
     </body>
 </html>
